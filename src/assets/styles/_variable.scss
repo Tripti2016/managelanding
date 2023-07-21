@@ -1,0 +1,26 @@
+$Bright-Red: hsl(12, 88%, 59%);
+$Dark-Blue: hsl(228, 39%, 23%);
+
+//secondary
+$Dark-Grayish-Blue: hsl(227, 12%, 61%);
+$Very-Dark-Blue: hsl(233, 12%, 13%);
+$Very-Pale-Red: hsl(13, 100%, 96%);
+$Very-Light-Gray: hsl(0, 0%, 98%);
+
+@mixin heading-font($font-size) {
+  font-size: $font-size;
+  font-weight: 700;
+  line-height: 120%;
+  color: $Very-Dark-Blue;
+}
+@mixin sub-font($font-size) {
+    font-size: $font-size;
+    font-weight: 400;
+    line-height: 150%;
+    color: $Dark-Grayish-Blue;
+  }
+@mixin flex-coloum{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}

@@ -1,0 +1,123 @@
+@import "./fonts";
+@import "./variable";
+@import "./navbar";
+@import "./footer";
+@import "./main";
+@import "./review";
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Be Vietnam Pro";
+  box-sizing: border-box;
+  overflow-x: hidden;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/bg-simplify-section-desktop.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+}
+.container {
+  position: relative;
+  margin: auto;
+  max-width: 1024px;
+  padding: 60px;
+  @media (max-width: 768px) {
+    padding: 24px;
+  }
+}
+.btn-start {
+  button {
+    padding: 16px 24px;
+    border: none;
+    border-radius: 35px;
+    color: hsl(0, 0%, 98%);
+    background-color: rgb(242, 95, 58);
+    font-size: 18px;
+    line-height: 120%;
+    font-weight: 700;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+      cursor: pointer;
+      box-shadow: 1.5px 1.5px 7px hsl(227, 12%, 61);
+    }
+  }
+}
+
+//primary
+
+$Bright-Red: hsl(12, 88%, 59%);
+$Dark-Blue: hsl(228, 39%, 23%);
+
+//secondary
+$Dark-Grayish-Blue: hsl(227, 12%, 61%);
+$Very-Dark-Blue: hsl(233, 12%, 13%);
+$Very-Pale-Red: hsl(13, 100%, 96%);
+$Very-Light-Gray: hsl(0, 0%, 98%);
+
+img {
+  max-width: 100%;
+  height: 100%;
+}
+
+
+.recharts-layer {
+  text {
+    display: none;
+  }
+  path {
+    stroke: none;
+  }
+}
+.chart{
+  display: grid;
+  grid-template-columns: minmax(150px, auto) 1fr 1fr;
+  grid-template-areas: " one three"
+  "two two";
+  justify-content: center;
+  gap: 42px;
+  align-items: center;
+  @media (max-width:800px) {
+    gap: 0 16px;
+    grid-template-areas:"one three" " two two"
+  ;
+  align-items: center;;
+  } @media (max-width:375px) {
+    max-width: 250px;
+    gap: 16px;
+  }
+  .bar{
+    grid-area: one;
+    width: 250px;
+   @media (max-width:768px) {
+      width: 150px !important;
+      height: -webkit-fill-available;
+      
+    }
+  }
+  .dountChart{
+    grid-area: two;
+    margin: auto;
+  }
+  .percent{
+    margin: auto;
+    grid-area: three;
+    @media (max-width:768px) {
+      // width: 150px !important;
+      height: -webkit-fill-available;
+
+    }
+  }
+}

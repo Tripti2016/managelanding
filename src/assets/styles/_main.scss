@@ -1,0 +1,129 @@
+main {
+  padding: 72px 0;
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    // grid-template-areas: "one" "two" "three" "four";
+    gap: 60px;
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-areas: "two" "one" "three" "four";
+      grid-template-rows: auto;
+      gap: 60px 24px;
+    }
+    .main-conatiner-one {
+      display: flex;
+      flex-direction: column;
+      gap: 42px;
+      justify-content: center;
+      @media (max-width: 768px) {
+        grid-area: one;
+        align-items: center;
+        text-align: center;
+      }
+
+      h1 {
+        @include heading-font(60px);
+        @media (max-width:768px) {
+          font-size: 42px;
+        }
+      }
+      p {
+        @include sub-font(16px);
+        padding-right: 250px;
+        @media (max-width:1116px) {
+          padding-right: 0;
+
+        }
+      }
+    }
+    .main-container-chart {
+      @media (max-width: 768px) {
+        grid-area: two;
+        margin: auto;
+      }
+    }
+    .main-conatiner-three {
+      @include flex-coloum;
+      @media (max-width: 768px) {
+        grid-area: three;
+      }
+      h1 {
+        @include heading-font(32px);
+      }
+      p {
+        @include sub-font(16px);
+        padding-right: 250px;
+        @media (max-width:1116px) {
+          padding-right: 0;
+        }
+      }
+    }
+    .main-container-four {
+      @media (max-width: 768px) {
+        grid-area: four;
+      }
+      .about-box {
+        @include flex-coloum;
+
+        .about-box-text {
+          display: grid;
+          grid-template-areas:
+            "num head"
+            "num para";
+          gap: 24px;
+          @media (max-width: 768px) {
+            display: grid;
+            grid-template-areas:
+              "num head"
+              "para para";
+              grid-template-columns: 70px 1fr;
+            gap: 24px;
+            align-items: baseline;
+            position: relative;
+            &::before {
+              content: " ";
+              background-color: #f7dbe070;
+              width: 100%;
+              height: 40px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: -1;
+              border-radius: 20px 0 0 20px;
+            }
+          }
+        }
+        h1 {
+          grid-area: head;
+          @include heading-font(32px);
+          @media (max-width: 768px) {
+            font-size: 12px;
+          }
+        }
+        p {
+          grid-area: para;
+          @include sub-font(16px);
+        }
+        h2 {
+          grid-area: num;
+          background-color: $Bright-Red;
+          color: white;
+          display: inline-block;
+          padding: 12px 28px;
+          color: $Very-Light-Gray;
+          border-radius: 30px;
+          font-size: 18px;
+          height: fit-content;
+          @media (max-width: 768px) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
